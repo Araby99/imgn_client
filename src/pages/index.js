@@ -1,5 +1,9 @@
+import Head from "next/head"
+
 export default () => {
-  return (
-    <h1>Hi</h1>
-  )
+    return (
+        <Head>
+            <title>IMGN</title>
+        </Head>
+    )
 }
