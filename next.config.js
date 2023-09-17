@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    SERVER: "http://localhost:8000"
+    //https://imgn-server.onrender.com/
+    SERVER: "https://imgn-server.onrender.com/"
   }
 }
 
