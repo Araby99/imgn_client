@@ -3,6 +3,7 @@ import Nav from '@/components/Nav'
 import localFont from 'next/font/local'
 import Footer from '@/components/Footer'
 import axios from 'axios'
+import Head from 'next/head'
 axios.defaults.baseURL = process.env.SERVER;
 const poppins = localFont({
     src: [
@@ -31,12 +32,18 @@ const poppins = localFont({
 
 export default ({ Component, pageProps }) => {
     return (
-        <main className={`${poppins.className} main-imgn`}>
-            <div>
-                <Nav />
-                <Component {...pageProps} />
-            </div>
-            <Footer />
-        </main>
+        <>
+            <Head>
+                <title>IMGN</title>
+                <link rel="shortcut icon" href="/images/favi.png" type="image/x-icon" />
+            </Head>
+            <main className={`${poppins.className} main-imgn`}>
+                <div>
+                    <Nav />
+                    <Component {...pageProps} />
+                </div>
+                <Footer />
+            </main>
+        </>
     )
 }

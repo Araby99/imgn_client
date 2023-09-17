@@ -10,11 +10,7 @@ export default () => {
             setNews(result.data)
         })
     }
-    useEffect(() => {
-        axios.get("/news").then(result => {
-            setNews(result.data)
-        })
-    }, [])
+    useEffect(() => getData("/news"), [])
     return (
         <>
             <Head>
@@ -24,14 +20,15 @@ export default () => {
                 <article className="max-w-6xl mx-auto px-3">
                     <section
                         className="dir-rtl grid grid-cols-1 mx-10 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8"
-                        data-test="news-section"
-                    >
+                        data-test="news-section">
                         {
                             news?.data.map((item, index) => (
                                 <div key={index} className="col-span-1">
                                     <Card {...item} type="news" />
                                 </div>
                             ))
+                        }
+                        {
                         }
                     </section>
                     {

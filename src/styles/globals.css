@@ -4,8 +4,10 @@
 body {
   background-color: #161616;
   background-image: url(/images/Background.png);
-  background-position: center center;
+  background-position: bottom;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   overflow-x: hidden;
 }
 .skew-20 {
@@ -74,4 +76,12 @@ body {
 }
 .pagination > *.active {
     opacity: 1;
+}
+footer {
+  padding: 100px 0 50px!important;
+  background: url(/images/footer.png) no-repeat;
+  background-size: cover;
+}
+.footer-links:hover svg {
+  fill: #fff;
 }

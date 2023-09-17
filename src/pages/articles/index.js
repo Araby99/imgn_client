@@ -10,11 +10,7 @@ export default () => {
             setArticles(result.data)
         })
     }
-    useEffect(() => {
-        axios.get("/articles").then(result => {
-            setArticles(result.data)
-        })
-    }, [])
+    useEffect(() => getData("/articles"), [])
     return (
         <>
             <Head>
@@ -24,8 +20,7 @@ export default () => {
                 <article className="max-w-6xl mx-auto px-3">
                     <section
                         className="dir-rtl grid grid-cols-1 mx-10 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8"
-                        data-test="articles-section"
-                    >
+                        data-test="articles-section">
                         {
                             articles?.data.map((item, index) => (
                                 <div key={index} className="col-span-1">
